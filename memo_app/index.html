@@ -1,0 +1,99 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mémos</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="memoApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- <ng-include src="views/main.html" </ng-include> -->
+   
+  <div class="content" ng-controller="MainCtrl" id="top">
+    <div class="row">
+      <div class="col-xs-14 col-md-12">
+
+          <div class="header">
+            <h3 class="text-muted">Mémos</h3>
+          </div>
+        
+        <div class="dashbord">
+           <aside class="col-xs-4 col-md-2">    
+                <form ng-submit="addMemo()">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Créer"> 
+                </form> 
+                <ul class="colors">
+                  <li>
+                    <a ng-repeat="bgdColor in bgdColors" href="#" title="" ng-mouseover="hoverBgdColor()" style="background-color:{{bgdColor}}">&nbsp;</a>
+                  </li>
+                </ul>     
+           </aside>
+              
+           <section>    
+              <div class="col-xs-12 col-md-10">
+                  <ul class="memos">
+                    <li ng-repeat="memo in memos">
+                      <span class="glyphicon glyphicon-remove remove_btn" ng-click="removeMemo(memo)"></span>
+                      <textarea ng-maxlength="50" ng-model="memoContent" name="myMemo" placeholder="Commencer à écrire..." autofocus>               
+                      </textarea><br>
+                      <div class="btns">
+                        <form ng-submit="save()">
+                          <input type="submit" class="btn btn-primary btn-sm" value="Enregistrer"> 
+                        </form>
+                      </div>
+                    </li>
+                  </ul>        
+              </div>         
+            </section>
+          </div>
+
+          <aside class="col-xs-12 col-md-10">
+              <button class="btn btn-primary scrollTop btn-sm col-md-offset-11">
+                <span class="glyphicon glyphicon-arrow-up"></span>
+              </button>
+          </aside>
+           
+          <div class="footer">
+            <p>pattern : 'black felt', <a href="http://www.evanzummeren.com/" target="_blank">E. van Zummeren</a> <br> {{year | date :'yyyy'}} - Assitan</p>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-i18n/angular-locale_fr-fr.js"></script>
+    <script src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+    <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/js/animation.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content{
+    .header {
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #fff; 
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 40px;
+            padding-bottom: 19px;
+            text-align: center;
+        }     
+
+        .text-muted{
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    .dashbord{
+        background: #131111 url(/images/zwartevilt.png) repeat 0 0;
+        padding: 15px 0 50px 0;
+        box-shadow: 0 3px 2px #000;
+        min-height: 475px;
+
+        aside{
+            input{
+                position: fixed;
+            }
+        }
+
+        section{
+            overflow: hidden;
+
+                .memos{
+                    list-style-type: none;
+
+                    li:hover .remove_btn{
+                        display: block;
+                    }
+
+                    li{
+                        float: left;
+                        padding: 20px 46px 0 0;
+                        position: relative;
+
+                        .publication{
+                            color: #fff;
+                            display: block;
+                            text-align: right;
+                        }
+
+                        .remove_btn{
+                            display: none;
+                            position: absolute;
+                            top: 24px;
+                            right: 50px;
+                            cursor :pointer;
+                        }
+
+                        textarea{
+                            line-height: 25px;
+                            width: 220px;
+                            height: 150px;
+                            resize: none;
+                            outline: none;
+                            background: #F6F761 url(/images/traits.png) repeat scroll;
+                            border: 0;
+                            padding: 0 20px;
+                        }
+        
+                        .btns{
+                            margin-top: 20px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .colors{
+                margin-top: 60px;
+
+                li{
+                    list-style-type: none;
+
+                    a{
+                        width: 45px;
+                        height: 45px;
+                        border: 2px solid #fff;
+                        display: block;
+                        margin-bottom: 5px;
+
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                }
+             
+            }
+        
+    }
+
+    .scrollTop{
+        display: none;
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 100px;
+    }
+
+    .footer{
+         padding-top: 19px;
+        color: #777;
+        clear: both;
+        p{
+            text-align: center;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    .header,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
