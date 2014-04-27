@@ -19910,7 +19910,7 @@ body {
 }
 
 .content .dashbord {
-  background: #131111 url(/images/zwartevilt.png) repeat 0 0;
+  background: #131111 url(../images/zwartevilt.png) repeat 0 0;
   overflow: hidden;
   padding: 15px 0 50px 0;
   box-shadow: 0 3px 2px black;
@@ -20053,7 +20053,7 @@ body {
   height: 150px;
   resize: none;
   outline: none;
-  background: #f6f761 url(/images/traits.png) repeat scroll;
+  background: #f6f761 url(../images/traits.png) repeat scroll;
   border: 0;
   padding: 0 20px;
 }

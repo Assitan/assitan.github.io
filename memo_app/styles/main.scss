@@ -28,7 +28,7 @@ body {
     }
 
     .dashbord{
-        background: #131111 url(/images/zwartevilt.png) repeat 0 0;
+        background: #131111 url(../images/zwartevilt.png) repeat 0 0;
         overflow: hidden;
         padding: 15px 0 50px 0;
         box-shadow: 0 3px 2px #000;
@@ -76,8 +76,7 @@ body {
                             height: 150px;
                             resize: none;
                             outline: none;
-                            background: #F6F761 url(/images/traits.png) repeat scroll;
-                            //background: #F6F761 url(/images/notebook.png) repeat scroll;
+                            background: #F6F761 url(../images/traits.png) repeat scroll;
                             border: 0;
                             padding: 0 20px;
                         }
@@ -128,7 +127,6 @@ body {
             text-align: center;
         }
     }
-
 }
 
 
