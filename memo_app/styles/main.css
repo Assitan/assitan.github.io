@@ -19911,6 +19911,7 @@ body {
 
 .content .dashbord {
   background: #131111 url(/images/zwartevilt.png) repeat 0 0;
+  overflow: hidden;
   padding: 15px 0 50px 0;
   box-shadow: 0 3px 2px black;
   min-height: 475px;
@@ -19926,7 +19927,7 @@ body {
   }
 }
 
-.content .dashbord aside input {
+.content .dashbord #settings {
   position: fixed;
 }
 
@@ -19936,12 +19937,12 @@ body {
   }
 
   line {
-    font-family: \0000342;
+    font-family: \0000339;
   }
 }
 
-.content .dashbord section {
-  overflow: hidden;
+.content .dashbord #settings #colors {
+  margin-top: 10px;
 }
 
 @media -sass-debug-info {
@@ -19950,11 +19951,25 @@ body {
   }
 
   line {
-    font-family: \0000345;
+    font-family: \0000344;
   }
 }
 
-.content .dashbord section .memos {
+.content .dashbord #memos {
+  margin-left: 200px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/Assitan\/Documents\/1-Projets\/Angular\%20js\/memoApp\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \0000347;
+  }
+}
+
+.content .dashbord #memos .memos {
   list-style-type: none;
 }
 
@@ -19964,11 +19979,11 @@ body {
   }
 
   line {
-    font-family: \0000348;
+    font-family: \0000350;
   }
 }
 
-.content .dashbord section .memos li:hover .remove_btn {
+.content .dashbord #memos .memos li:hover .remove_btn {
   display: block;
 }
 
@@ -19978,11 +19993,11 @@ body {
   }
 
   line {
-    font-family: \0000352;
+    font-family: \0000354;
   }
 }
 
-.content .dashbord section .memos li {
+.content .dashbord #memos .memos li {
   float: left;
   padding: 20px 46px 0 0;
   position: relative;
@@ -19994,11 +20009,11 @@ body {
   }
 
   line {
-    font-family: \0000357;
+    font-family: \0000359;
   }
 }
 
-.content .dashbord section .memos li .publication {
+.content .dashbord #memos .memos li .publication {
   color: #fff;
   display: block;
   text-align: right;
@@ -20010,11 +20025,11 @@ body {
   }
 
   line {
-    font-family: \0000363;
+    font-family: \0000365;
   }
 }
 
-.content .dashbord section .memos li .remove_btn {
+.content .dashbord #memos .memos li .remove_btn {
   display: none;
   position: absolute;
   top: 24px;
@@ -20028,11 +20043,11 @@ body {
   }
 
   line {
-    font-family: \0000371;
+    font-family: \0000373;
   }
 }
 
-.content .dashbord section .memos li textarea {
+.content .dashbord #memos .memos li textarea {
   line-height: 25px;
   width: 220px;
   height: 150px;
@@ -20049,11 +20064,11 @@ body {
   }
 
   line {
-    font-family: \0000382;
+    font-family: \0000385;
   }
 }
 
-.content .dashbord section .memos li .btns {
+.content .dashbord #memos .memos li .btns {
   margin-top: 20px;
   text-align: center;
 }
@@ -20064,7 +20079,7 @@ body {
   }
 
   line {
-    font-family: \0000390;
+    font-family: \0000393;
   }
 }
 
@@ -20078,7 +20093,7 @@ body {
   }
 
   line {
-    font-family: \0000393;
+    font-family: \0000396;
   }
 }
 
@@ -20092,7 +20107,7 @@ body {
   }
 
   line {
-    font-family: \0000396;
+    font-family: \0000399;
   }
 }
 
@@ -20110,7 +20125,7 @@ body {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003106;
   }
 }
 
@@ -20124,12 +20139,11 @@ body {
   }
 
   line {
-    font-family: \00003113;
+    font-family: \00003116;
   }
 }
 
-.content .scrollTop {
-  display: none;
+.content #scrollTop {
   position: fixed;
   bottom: 0;
   margin-bottom: 100px;
@@ -20141,7 +20155,7 @@ body {
   }
 
   line {
-    font-family: \00003120;
+    font-family: \00003123;
   }
 }
 
@@ -20157,7 +20171,7 @@ body {
   }
 
   line {
-    font-family: \00003124;
+    font-family: \00003127;
   }
 }
 
@@ -20172,7 +20186,7 @@ body {
     }
 
     line {
-      font-family: \00003133;
+      font-family: \00003136;
     }
 }
 
@@ -20186,7 +20200,7 @@ body {
     }
 
     line {
-      font-family: \00003138;
+      font-family: \00003141;
     }
 }
 

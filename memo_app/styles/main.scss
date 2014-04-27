@@ -29,18 +29,20 @@ body {
 
     .dashbord{
         background: #131111 url(/images/zwartevilt.png) repeat 0 0;
+        overflow: hidden;
         padding: 15px 0 50px 0;
         box-shadow: 0 3px 2px #000;
         min-height: 475px;
 
-        aside{
-            input{
-                position: fixed;
+        #settings{
+            position: fixed;
+            #colors{
+                margin-top: 10px;
             }
         }
 
-        section{
-            overflow: hidden;
+        #memos{
+           margin-left: 200px;
 
                 .memos{
                     list-style-type: none;
@@ -75,6 +77,7 @@ body {
                             resize: none;
                             outline: none;
                             background: #F6F761 url(/images/traits.png) repeat scroll;
+                            //background: #F6F761 url(/images/notebook.png) repeat scroll;
                             border: 0;
                             padding: 0 20px;
                         }
@@ -110,8 +113,8 @@ body {
         
     }
 
-    .scrollTop{
-        display: none;
+    #scrollTop{
+        //display: none;
         position: fixed;
         bottom: 0;
         margin-bottom: 100px;

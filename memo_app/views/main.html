@@ -1,42 +1,15 @@
- <div class="content" ng-controller="MainCtrl">
-    <div class="row">
-      <div class="col-xs-14 col-md-12">
-
-          <div class="header">
-            <h3 class="text-muted">Mémos</h3>
-          </div>
-
-         <aside class="col-xs-4 col-md-2">    
-              <form ng-submit="addMemo()">
-                <input class="btn btn-primary btn-lg" type="submit" value="Créer"><br>    
-              </form>        
-         </aside>
-            
-         <section>    
-            <div class="col-xs-12 col-md-10 dashbord">
-                <ul class="memos">
-                  <li ng-repeat="memo in memos" ng-model="new_memo">
-                  <span ng-model="publication">{{date | date:'medium'}}</span>
-                    <span class="glyphicon glyphicon-remove remove_btn" ng-click="removeMemo(memo)"></span>
-                    <textarea ng-model="memo.title" name="myMemo" placeholder="Commencer à écrire..." autofocus>
-                   {{memo.title}}
-                    </textarea><br>
-                    <div class="btns">
-                      <button class="btn btn-primary btn-sm">Ajouter</button>                  
-                    </div>
-                  </li>
-                </ul>        
+<section id="memos">    
+    <div class="col-xs-12 col-md-10">
+        <ul class="memos">
+          <li ng-repeat="memo in memos">
+            <span class="glyphicon glyphicon-remove remove_btn" ng-click="removeMemo(memo)"></span>
+            <textarea style="background-color:{{getColor.colors}};" ng-maxlength="50" name="myMemo" placeholder="Commencer à écrire..." autofocus></textarea>
+            <div class="btns">
+              <form ng-submit="setMemoContent($index)">
+                <input type="submit" class="btn btn-primary btn-sm" value="Enregistrer"> 
+              </form>
             </div>
-
-            <button class="btn btn-primary suppr btn-sm col-md-offset-9">
-              <span class="glyphicon glyphicon-arrow-up"></span>
-            </button>
-          </section>
-         
-          <div class="footer">
-            <p>2014 - Assitan</p>
-          </div>
-
-      </div>
-    </div>
-  </div>
+          </li>
+       </ul>        
+    </div>         
+</section>
