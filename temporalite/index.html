@@ -1,0 +1,337 @@
+<html>
+<head>
+	<meta charset="UTF-8" lang="fr">
+	<title>Verticalité Temporelle</title>
+	<meta name="author" content="Assitan Koné" />
+	<link rel="icon" type="image/png" href="logo.png" />
+
+	<style type="text/css">
+
+	body{
+		margin: 0;		
+	}
+
+	.animated {
+	        animation-duration: 1s;
+	        animation-fill-mode: both;
+}
+
+@keyframes shake {
+	0% {opacity: 1; transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {;opacity: 1; transform: translateX(-10px)}
+	20%, 40%, 60%, 80% {opacity: 1; transform: translateX(10px);}
+	99% {transform: translateX(0);}
+	100% {opacity: 0;}
+}
+
+.shake {animation-name: shake;}
+
+@keyframes fadeInRight {
+	0% {opacity: 0; transform: translateX(20px);}
+	95% {opacity: 1; transform: translateX(0);}
+	100%{opacity: 0;}
+}
+
+.fadeInRight {
+	animation-name: fadeInRight;
+}
+
+@keyframes bounceInUp {
+	0% {opacity: 0; transform: translateY(2000px);}
+	60% {opacity: 1; transform: translateY(-30px);}	
+	80% {transform: translateY(10px);}	
+	100% {transform: translateY(0);}
+}
+
+.bounceInUp {animation-name: bounceInUp;}
+
+.anim-body{
+	display: block;
+}
+
+.ze{
+	width: 60px;
+	height: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	display: table;
+	position: relative;
+}
+
+.ze:nth-child(2),.ze:nth-child(3){
+	margin-top: -700px;
+}
+
+.ert{
+	position: relative;
+	display: table-row;	
+}
+
+.shake, .fadeInRight, .bounceInUp{
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+}
+
+.shake p{
+	width: 50px;
+	height: 100%;
+	background-color: #3399FF;
+}
+
+.fadeInRight p {
+	width: 70px;
+	height: 100%;
+	background-color: #3399FF;
+}
+
+@keyframes bounceInUp {
+	0% {opacity: 0; transform: translateY(800px);}
+	60% {opacity: 1; transform: translateY(-30px);}	
+	80% {transform: translateY(10px);}	
+	100% {transform: translateY(0);}
+}
+
+.bounceInUp {animation-name: bounceInUp;}
+
+.wrap{
+	width: 60px;
+	height: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	display: table;
+	position: relative;
+	top: -530px;
+}
+
+.ertop{
+	position: relative;
+	display: table-row;	
+}
+
+.bounceInUp{
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+}
+
+.bounceInUp p{
+	width: 20px;
+	height: 100%;
+	margin: 2px;	
+}
+
+.up1 {animation-delay: 11s;}
+.up2 {animation-delay: 10s;}
+.up3 {animation-delay: 17s;}
+.up4 {animation-delay: 11s;}
+.up5 {animation-delay: 10s;}
+.up6 {animation-delay: 17s;}
+.up7 {animation-duration: 4s; animation-delay: 1s;}
+.up8 {animation-duration: 4s;animation-delay: 2s;}
+.up9 {animation-duration: 4s;animation-delay: 3s;}
+.up10 {animation-duration: 8s;animation-delay: 1s;}
+.up11 {animation-duration: 8s;animation-delay: 2s;}
+.up12 {animation-duration: 8s;animation-delay: 3s;}
+
+.nup1 {animation-duration: 16s; animation-delay: 5s;}
+.nup2 {animation-duration: 16.1s; animation-delay: 5s;}
+.nup3 {animation-duration: 16.2s; animation-delay: 5s;}
+.nup4 {animation-duration: 16s; animation-delay: 5s;}
+.nup5 {animation-duration: 16.1s; animation-delay: 5s;}
+.nup6 {animation-duration: 16.2s; animation-delay: 5s;}
+.nup7 {animation-duration: 16s; animation-delay: 5s;}
+.nup8 {animation-duration: 16.1s;animation-delay: 5s;}
+.nup9 {animation-duration: 16.2s;animation-delay: 5s;}
+.nup10 {animation-duration: 16s;animation-delay: 5s;}
+.nup11 {animation-duration: 16.1s;animation-delay: 5s;}
+.nup12 {animation-duration: 16.2s;animation-delay: 5s;}
+
+.bup1 {animation-duration: 15s; animation-delay: 22s;}
+.bup2 {animation-duration: 15s; animation-delay: 23s;}
+.bup3 {animation-duration: 15s; animation-delay: 24s;}
+.bup4 {animation-duration: 15s; animation-delay: 25s;}
+.bup5 {animation-duration: 15s; animation-delay: 26s;}
+.bup6 {animation-duration: 15s; animation-delay: 31s;}
+.bup7 {animation-duration: 15s; animation-delay: 31.4s;}
+.bup8 {animation-duration: 15s;animation-delay: 31s;}
+.bup9 {animation-duration: 15s;animation-delay: 31.4s;}
+.bup10 {animation-duration: 15s;animation-delay: 31s;}
+.bup11 {animation-duration: 15s;animation-delay: 31.4s;}
+.bup12 {animation-duration: 15s;animation-delay: 31s;}
+
+.tup1 {animation-duration: 15s; animation-delay: 32s;}
+.tup2 {animation-duration: 15s; animation-delay: 33s;}
+.tup3 {animation-duration: 15s; animation-delay: 34s;}
+.tup4 {animation-duration: 15s; animation-delay: 35s;}
+.tup5 {animation-duration: 15s; animation-delay: 36s;}
+.tup6 {animation-duration: 15s; animation-delay: 31s;}
+.tup7 {animation-duration: 15s; animation-delay: 31.4s;}
+.tup8 {animation-duration: 15s; animation-delay: 31s;}
+.tup9 {animation-duration: 15s; animation-delay: 31.4s;}
+.tup10 {animation-duration: 15s; animation-delay: 31s;}
+.tup11 {animation-duration: 15s; animation-delay: 29.4s;}
+.tup12 {animation-duration: 15s; animation-delay: 29s;}
+
+.gup1 {background-color: #00a9ff; animation-duration: 5s; animation-delay: 46s;}
+.gup2 {background-color: #34afed;animation-duration: 5s; animation-delay: 46.5s;}
+.gup3 {background-color: #74cbf7;animation-duration: 5s; animation-delay: 47s;}
+.gup4 {background-color: #00a9ff;animation-duration: 5s; animation-delay: 47.5s;}
+.gup5 {background-color: #34afed;animation-duration: 5s; animation-delay: 48s;}
+.gup6 {background-color: #74cbf7;animation-duration: 5s; animation-delay: 48.5s;}
+.gup7 {background-color: #00a9ff;animation-duration: 5s; animation-delay: 49s;}
+.gup8 {background-color: #34afed;animation-duration: 5s; animation-delay: 49.5s;}
+.gup9 {background-color: #74cbf7;animation-duration: 5s; animation-delay: 50s;}
+.gup10 {background-color: #00a9ff;animation-duration: 5s;animation-delay: 50.5s;}
+.gup11 {background-color: #34afed;animation-duration: 5s;animation-delay: 51s;}
+.gup12 {background-color: #74cbf7;animation-duration: 5s;animation-delay: 51.5s;}
+
+.kup1 {background-color: #00a9ff; animation-duration: 18s; animation-delay: 46s;}
+.kup2 {background-color: #34afed;animation-duration: 18s; animation-delay: 46.5s;}
+.kup3 {background-color: #74cbf7;animation-duration: 18s; animation-delay: 47s;}
+.kup4 {background-color: #00a9ff;animation-duration: 18s; animation-delay: 47.5s;}
+.kup5 {background-color: #34afed;animation-duration: 18s; animation-delay: 48s;}
+.kup6 {background-color: #74cbf7;animation-duration: 18s; animation-delay: 48.5s;}
+.kup7 {background-color: #00a9ff;animation-duration: 18s; animation-delay: 49s;}
+.kup8 {background-color: #34afed;animation-duration: 18s; animation-delay: 49.5s;}
+.kup9 {background-color: #74cbf7;animation-duration: 18s; animation-delay: 50s;}
+.kup10 {background-color: #00a9ff;animation-duration: 18s;animation-delay: 50.5s;}
+.kup11 {background-color: #34afed;animation-duration: 18s;animation-delay: 51s;}
+.kup12 {background-color: #74cbf7;animation-duration: 18s;animation-delay: 51.5s;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="anim-body">
+	<div class="ze">
+		<div class="ert">
+			<div class="animated shake up1"><p></p></div>
+			<div class="animated shake up2"><p></p></div>
+			<div class="animated shake up3"><p></p></div>
+			<div class="animated shake up4"><p></p></div>
+			<div class="animated shake up5"><p></p></div>
+			<div class="animated shake up6"><p></p></div>
+			<div class="animated shake up7"><p></p></div>
+			<div class="animated shake up8"><p></p></div>
+			<div class="animated shake up9"><p></p></div>
+			<div class="animated shake up10"><p></p></div>
+			<div class="animated shake up11"><p></p></div>
+			<div class="animated shake up12"><p></p></div>	
+
+			<div class="animated shake nup1"><p></p></div>
+			<div class="animated shake nup2"><p></p></div>
+			<div class="animated shake nup3"><p></p></div>
+			<div class="animated shake nup4"><p></p></div>
+			<div class="animated shake nup5"><p></p></div>
+			<div class="animated shake nup6"><p></p></div>
+			<div class="animated shake nup7"><p></p></div>
+			<div class="animated shake nup8"><p></p></div>
+			<div class="animated shake nup9"><p></p></div>
+			<div class="animated shake nup10"><p></p></div>
+			<div class="animated shake nup11"><p></p></div>
+			<div class="animated shake nup12"><p></p></div>
+		</div>
+	</div>
+
+	<div class="ze">
+		<div class="ert">		
+			<div class="animated fadeInRight bup1"><p></p></div>
+			<div class="animated fadeInRight bup2"><p></p></div>
+			<div class="animated fadeInRight bup3"><p></p></div>
+			<div class="animated fadeInRight bup4"><p></p></div>
+			<div class="animated fadeInRight bup5"><p></p></div>
+			<div class="animated fadeInRight bup6"><p></p></div>
+			<div class="animated fadeInRight bup7"><p></p></div>
+			<div class="animated fadeInRight bup8"><p></p></div>
+			<div class="animated fadeInRight bup9"><p></p></div>
+			<div class="animated fadeInRight bup10"><p></p></div>
+			<div class="animated fadeInRight bup11"><p></p></div>
+			<div class="animated fadeInRight bup12"><p></p></div>
+		</div>
+	</div>
+
+	<div class="ze">
+		<div class="ert">		
+			<div class="animated bounceInUp tup1"><p></p></div>
+			<div class="animated bounceInUp tup2"><p></p></div>
+			<div class="animated bounceInUp tup3"><p></p></div>
+			<div class="animated bounceInUp tup4"><p></p></div>
+			<div class="animated bounceInUp tup5"><p></p></div>
+			<div class="animated bounceInUp tup6"><p></p></div>
+			<div class="animated bounceInUp tup7"><p></p></div>
+			<div class="animated bounceInUp tup8"><p></p></div>
+			<div class="animated bounceInUp tup9"><p></p></div>
+			<div class="animated bounceInUp tup10"><p></p></div>
+			<div class="animated bounceInUp tup11"><p></p></div>
+			<div class="animated bounceInUp tup12"><p></p></div>
+		</div>
+	</div>
+
+	<div class="wrap">
+		<div class="ertop">	
+
+			<div class="animated bounceInUp gup1"><p></p></div>
+			<div class="animated bounceInUp gup2"><p></p></div>
+			<div class="animated bounceInUp gup3"><p></p></div>
+			<div class="animated bounceInUp gup4"><p></p></div>
+			<div class="animated bounceInUp gup5"><p></p></div>
+			<div class="animated bounceInUp gup6"><p></p></div>
+			<div class="animated bounceInUp gup7"><p></p></div>
+			<div class="animated bounceInUp gup8"><p></p></div>
+			<div class="animated bounceInUp gup9"><p></p></div>
+			<div class="animated bounceInUp gup10"><p></p></div>
+			<div class="animated bounceInUp gup11"><p></p></div>
+			<div class="animated bounceInUp gup12"><p></p></div>
+
+			<div class="animated bounceInUp kup1"><p></p></div>
+			<div class="animated bounceInUp kup2"><p></p></div>
+			<div class="animated bounceInUp kup3"><p></p></div>
+			<div class="animated bounceInUp kup4"><p></p></div>
+			<div class="animated bounceInUp kup5"><p></p></div>
+			<div class="animated bounceInUp kup6"><p></p></div>
+			<div class="animated bounceInUp kup7"><p></p></div>
+			<div class="animated bounceInUp kup8"><p></p></div>
+			<div class="animated bounceInUp kup9"><p></p></div>
+			<div class="animated bounceInUp kup10"><p></p></div>
+			<div class="animated bounceInUp kup11"><p></p></div>
+			<div class="animated bounceInUp kup12"><p></p></div>
+
+			<div class="animated bounceInUp gup1"><p></p></div>
+			<div class="animated bounceInUp gup2"><p></p></div>
+			<div class="animated bounceInUp gup3"><p></p></div>
+			<div class="animated bounceInUp gup4"><p></p></div>
+			<div class="animated bounceInUp gup5"><p></p></div>
+			<div class="animated bounceInUp gup6"><p></p></div>
+			<div class="animated bounceInUp gup7"><p></p></div>
+			<div class="animated bounceInUp gup8"><p></p></div>
+			<div class="animated bounceInUp gup9"><p></p></div>
+			<div class="animated bounceInUp gup10"><p></p></div>
+			<div class="animated bounceInUp gup11"><p></p></div>
+			<div class="animated bounceInUp gup12"><p></p></div>
+		</div>
+	</div>
+</div>
+
+	<audio controls autoplay>
+		<source src="son.ogg" type="audio/ogg">
+		<source src="son.mp3" type="audio/mp3">
+	</audio>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/files/jquery.1.9.1.min.js"><\/script>')</script>
+	<script src="prefixfree.min.js"></script>
+
+	<script>
+
+	$(document).ready(function() {
+		$('audio').hide();
+	});
+	
+	</script>
+
+</body>
+</html>
