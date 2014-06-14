@@ -1,8 +1,8 @@
 'use strict';
 
-app.controller('MainCtrl', function($scope,$http) {
+app.controller('MainCtrl', function($scope) {
  
-  	$scope.memos = []; 
+  	 $scope.memos = []; 
 
     $scope.year = new Date();
 
@@ -17,27 +17,6 @@ app.controller('MainCtrl', function($scope,$http) {
     $scope.removeMemo = function(index){    
       $scope.memos.splice(index,1);
     };
-
-/*    var fb_url = new Firebase('https://memo-app.firebaseio.com');
-    var memoColors = new Firebase(fb_url + '/colors');
-    var content = new Firebase(fb_url + '/content');
-
-    $scope.setMemoColors = function(){
-      memoColors.update($scope.setColor);
-      console.log($scope.setColor);
-    };
-
-    memoColors.on('value', function(snap) {
-      $scope.getColor = snap.val();
-    });
-
-    $scope.setMemoContent = function(id){
-      content.push(angular.copy($scope.memo));//enleve le $$HashKey 
-    };
-
-    content.on('value', function(snap) {
-      $scope.getMemoContent = snap.val();
-    });*/
 
  })
   .directive('memoContent', function () {
