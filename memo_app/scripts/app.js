@@ -5,4 +5,13 @@ var app = angular.module('memoApp',[
 	'ngResource',
 	'scrollto',
 	'colorpicker.module'
-	]);
+	])
+	.config(['$routeProvider', function($routeProvider) {
+	  $routeProvider
+	    .when('/memo_save', {
+	      templateUrl: 'scripts/controllers/memo.json', 
+	      controller: 'MainCtrl'
+	    })
+	    .otherwise({redirectTo: '/'});
+
+	}]);

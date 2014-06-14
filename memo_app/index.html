@@ -20,24 +20,13 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-<div class="content" ng-controller="MainCtrl" id="top">
+    <div class="content" ng-controller="MainCtrl" id="top">
       <div class="col-sm-12">
           <div class="header">
             <h3 class="text-muted">Mémos</h3>
           </div>
         
-        <div class="dashbord">
-           <section id="settings" class="col-xs-4 col-md-2">    
-                <form ng-submit="addMemo()">
-                  <input class="btn btn-primary btn-lg" type="submit" value="Créer"> 
-                </form>
-                <button id="colors" class="btn btn-default btn-xs" colorpicker colorpicker-fixed-position="true" ng-model="setColor.colors" type="button" ng-click="setMemoColors()">Couleurs</button> 
-                <button id="colors" class="btn btn-info btn-xs" ng-model="setColor.colors" type="button" ng-click="setMemoColors()">Ok</button> 
-           </section>
-
-            <ng-include src="'views/main.html'"></ng-include>
-           
-          </div>
+          <memo-content ui-view></memo-content>
 
           <div class="col-xs-12 col-md-10">
               <button id="scrollTop" class="btn btn-primary scrollTop btn-sm col-md-offset-11">
@@ -50,7 +39,8 @@
           </div>
 
       </div>
-  </div>
+    </div>
+
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
