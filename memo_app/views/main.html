@@ -11,7 +11,7 @@
       <div class="col-xs-12 col-md-10">
           <ul class="memos">
             <li ng-repeat="memo in memos">
-            <p class="publication">{{memo.publication | date:'d MMM, y hh:mm:ss'}}</p>
+            <p class="publication">{{memo.publication | date:'le d MMM y à hh:mm'}}</p>
               <span class="glyphicon glyphicon-remove remove_btn" ng-click="removeMemo(memo)"></span>
               <textarea ng-model="memo.data" ng-maxlength="50" name="myMemo" placeholder="..." autofocus></textarea>
               <div class="btns">
