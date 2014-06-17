@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', function($scope,$http) {
+app.controller('MainCtrl', function ($scope) {
  
   	$scope.memos = []; 
 
@@ -10,7 +10,7 @@ app.controller('MainCtrl', function($scope,$http) {
     $scope.addMemo = function(){
       $scope.memo = {};
       $scope.memo.publication = Date.now();
-      $scope.memos.push($scope.memo);
+      $scope.memos.push($scope.memo);   
     };
 
     //Suppression d'un mémo
@@ -18,26 +18,21 @@ app.controller('MainCtrl', function($scope,$http) {
       $scope.memos.splice(index,1);
     };
 
-/*    var fb_url = new Firebase('https://memo-app.firebaseio.com');
-    var memoColors = new Firebase(fb_url + '/colors');
-    var content = new Firebase(fb_url + '/content');
-
-    $scope.setMemoColors = function(){
-      memoColors.update($scope.setColor);
-      console.log($scope.setColor);
+    $scope.setMemoContent = function(){
+      localStorage.setItem('Memos', JSON.stringify(angular.copy($scope.memos)));
+      alert('Enregistré');
     };
 
-    memoColors.on('value', function(snap) {
-      $scope.getColor = snap.val();
-    });
+    $scope.getMemoContent = function(){
+      $scope.storage = localStorage.getItem('Memos');
+      $scope.storage = JSON.parse($scope.storage);
 
-    $scope.setMemoContent = function(id){
-      content.push(angular.copy($scope.memo));//enleve le $$HashKey 
-    };
-
-    content.on('value', function(snap) {
-      $scope.getMemoContent = snap.val();
-    });*/
+      $scope.storage.forEach(function (element){
+        $scope.storage[element] = element;
+        console.log(element);
+      });
+      
+    }; 
 
  })
   .directive('memoContent', function () {

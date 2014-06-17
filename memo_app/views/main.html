@@ -5,6 +5,11 @@
         </form>
         <!-- <button class="colorsSettings btn btn-default btn-xs" colorpicker colorpicker-fixed-position="true" ng-model="setColor.colors" type="button">Couleurs</button> 
         <button class="colorsSettings btn btn-info btn-xs" ng-model="setColor.colors" type="button" ng-click="setMemoColors()">Ok</button>  -->
+        <ul class="nav" id="data_result">
+          <li ng-repeat="stocked in storage">
+            [{{$index + 1}}] <i>{{stocked.publication | date:'d MMM y, H:mm:ss'}}</i> : {{stocked.data}}
+          </li>
+        </ul>
     </section>
 
     <section id="memos">    
@@ -15,13 +20,15 @@
               <span class="glyphicon glyphicon-remove remove_btn" ng-click="removeMemo(memo)"></span>
               <textarea ng-model="memo.data" ng-maxlength="50" name="myMemo" placeholder="..." autofocus></textarea>
               <div class="btns">
-                <form ng-submit="setMemoContent($index)">
+                <form ng-submit="setMemoContent()">
                   <input type="submit" class="btn btn-primary btn-sm" value="Enregistrer"> 
+                </form>
+                <form ng-submit="getMemoContent()">
+                  <input type="submit" class="btn btn-primary btn-sm" value="Récupérer"> 
                 </form>
               </div>
             </li>
          </ul>        
-      </div>         
-  </section>
-           
+      </div>            
+  </section>   
 </div>
