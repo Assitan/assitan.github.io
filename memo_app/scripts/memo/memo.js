@@ -1,8 +1,12 @@
 'use strict';
 
+<<<<<<< HEAD
 app.controller('MainCtrl', function ($scope) {
+=======
+app.controller('MainCtrl', function($scope) {
+>>>>>>> e7c1685a44f758e159d5e2800813516bb4972e7e
  
-  	$scope.memos = []; 
+  	 $scope.memos = []; 
 
     $scope.year = new Date();
 
@@ -18,6 +22,7 @@ app.controller('MainCtrl', function ($scope) {
       $scope.memos.splice(index,1);
     };
 
+<<<<<<< HEAD
     $scope.setMemoContent = function(){
       localStorage.setItem('Memos', JSON.stringify(angular.copy($scope.memos)));
       alert('Enregistré');
@@ -34,6 +39,8 @@ app.controller('MainCtrl', function ($scope) {
       
     }; 
 
+=======
+>>>>>>> e7c1685a44f758e159d5e2800813516bb4972e7e
  })
   .directive('memoContent', function () {
     return {
