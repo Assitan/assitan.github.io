@@ -9703,35 +9703,42 @@ body {
 
 /* line 37, ../../app/styles/main.scss */
 
+.content .dashbord #data_result {
+  color: #eeeeee;
+  margin-top: 20px;
+}
+
+/* line 44, ../../app/styles/main.scss */
+
 .content .dashbord #settings {
   position: fixed;
 }
 
-/* line 39, ../../app/styles/main.scss */
+/* line 46, ../../app/styles/main.scss */
 
 .content .dashbord #settings .colorsSettings {
   margin-top: 10px;
 }
 
-/* line 44, ../../app/styles/main.scss */
+/* line 51, ../../app/styles/main.scss */
 
 .content .dashbord #memos {
   margin-left: 200px;
 }
 
-/* line 47, ../../app/styles/main.scss */
+/* line 54, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos {
   list-style-type: none;
 }
 
-/* line 50, ../../app/styles/main.scss */
+/* line 57, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos li:hover .remove_btn {
   display: block;
 }
 
-/* line 54, ../../app/styles/main.scss */
+/* line 61, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos li {
   float: left;
@@ -9739,7 +9746,7 @@ body {
   position: relative;
 }
 
-/* line 59, ../../app/styles/main.scss */
+/* line 66, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos li .publication {
   color: #fff;
@@ -9747,7 +9754,7 @@ body {
   text-align: right;
 }
 
-/* line 65, ../../app/styles/main.scss */
+/* line 72, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos li .remove_btn {
   display: none;
@@ -9757,7 +9764,7 @@ body {
   cursor: pointer;
 }
 
-/* line 73, ../../app/styles/main.scss */
+/* line 80, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos li textarea {
   line-height: 25px;
@@ -9770,26 +9777,38 @@ body {
   padding: 0 20px;
 }
 
-/* line 84, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 
 .content .dashbord #memos .memos li .btns {
   margin-top: 20px;
   text-align: center;
 }
 
-/* line 92, ../../app/styles/main.scss */
+/* line 95, ../../app/styles/main.scss */
+
+.content .dashbord #memos .memos li .btns form:first-child {
+  float: left;
+}
+
+/* line 98, ../../app/styles/main.scss */
+
+.content .dashbord #memos .memos li .btns form:last-child {
+  float: right;
+}
+
+/* line 107, ../../app/styles/main.scss */
 
 .content .dashbord .colors {
   margin-top: 60px;
 }
 
-/* line 95, ../../app/styles/main.scss */
+/* line 110, ../../app/styles/main.scss */
 
 .content .dashbord .colors li {
   list-style-type: none;
 }
 
-/* line 98, ../../app/styles/main.scss */
+/* line 113, ../../app/styles/main.scss */
 
 .content .dashbord .colors li a {
   width: 45px;
@@ -9799,13 +9818,13 @@ body {
   margin-bottom: 5px;
 }
 
-/* line 105, ../../app/styles/main.scss */
+/* line 120, ../../app/styles/main.scss */
 
 .content .dashbord .colors li a:hover {
   text-decoration: none;
 }
 
-/* line 115, ../../app/styles/main.scss */
+/* line 130, ../../app/styles/main.scss */
 
 .content #scrollTop {
   position: fixed;
@@ -9813,7 +9832,7 @@ body {
   margin-bottom: 100px;
 }
 
-/* line 122, ../../app/styles/main.scss */
+/* line 136, ../../app/styles/main.scss */
 
 .content .footer {
   padding-top: 19px;
@@ -9821,20 +9840,20 @@ body {
   clear: both;
 }
 
-/* line 126, ../../app/styles/main.scss */
+/* line 140, ../../app/styles/main.scss */
 
 .content .footer p {
   text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 134, ../../app/styles/main.scss */
+  /* line 148, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
   }
 
-  /* line 139, ../../app/styles/main.scss */
+  /* line 153, ../../app/styles/main.scss */
 
   .header,
   .footer {
