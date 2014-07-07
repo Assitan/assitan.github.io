@@ -1,0 +1,43 @@
+    <nav id="menu" class="navbar col-sm-1">
+        <ul id="menu_content" class="nav nav-pills nav-stacked">
+            <li class="countries">
+                <a class="title" href="#">kit</a>
+                <ul class="nav nav-pills nav-stacked sub-menu">
+                     <li ng-repeat="kit in main_countries" mdm-addactiveclass>
+                        <a ui-sref="kit_{{kit}}">{{kit}}</a>
+                    </li> 
+                </ul>           
+            </li>
+            <li class="countries">
+                <a class="title" href="#">kit700</a>
+                <ul class="nav nav-pills nav-stacked sub-menu">
+                    <li ng-repeat="kit700 in main_countries" mdm-addactiveclass>
+                        <a ui-sref="kit700_{{kit700}}">{{kit700}}</a>
+                    </li>
+                </ul>           
+            </li>
+            <li class="countries">
+                <a class="title" href="#">news</a>
+                <ul class="nav nav-pills nav-stacked sub-menu">
+                    <li ng-repeat="news in all_countries" mdm-addactiveclass>
+                        <a ui-sref="news_{{news}}">{{news}}</a>
+                    </li>
+                </ul>           
+            </li>
+            <li class="countries">
+                <a class="title" href="#">news700</a>
+                <ul class="nav nav-pills nav-stacked sub-menu">
+                    <li ng-repeat="news700 in all_countries" mdm-addactiveclass>
+                        <a ui-sref="news700_{{news700}}">{{news700}}</a>
+                    </li>
+                </ul>           
+            </li>
+            <li class="countries">
+                <a class="title" href="#">Clients Privilèges</a>
+                <ul class="nav nav-pills nav-stacked sub-menu">
+                    <li mdm-addactiveclass><a ui-sref="newsCP">600</a></li>
+                    <li mdm-addactiveclass><a ui-sref="news700CP">700</a></li>
+                </ul>           
+            </li>
+        </ul>     
+    </nav>

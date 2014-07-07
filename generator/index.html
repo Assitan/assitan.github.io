@@ -1,0 +1,63 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Générateur de newsletters</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.css">
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css">
+    <base href="/">
+  </head>
+  <body role="main" ng-app="emailingGeneratorApp" ng-controller="GeneratorCtrl" ng-cloak>
+            
+    <tabgroup>
+        <tab title="Template">
+            <template></template>
+        </tab>
+        <tab title="Code HTML">
+            <generate></generate>
+        </tab>
+    </tabgroup>
+    
+    <nav-countries></nav-countries>
+
+    <div id="settingsOutput">
+        <copy-code></copy-code><br>
+       <a id="generate_btn" href="#" class="btn_left btn btn-default disabled" target="_blank">Générer</a> <br>
+       <button class="btn_left btn btn-primary" ng-click="reset()">Tout effacer</button>
+    </div> 
+
+    <settings></settings>
+        
+    <div class="container newsletter" ui-view ng-controller="EmailingCtrl"></div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>  
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/main/config.js"></script>
+    <script src="scripts/generator/controllers/GeneratorCtrl.js"></script>
+    <script src="scripts/emailing/EmailingCtrl.js"></script>
+    <script src="scripts/generator/directives/interface.js"></script>
+    <script src="scripts/generator/directives/partials.js"></script>
+    <script src="scripts/generator/services/settings.js"></script>  
+</body>
+</html>

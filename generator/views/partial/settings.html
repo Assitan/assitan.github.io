@@ -1,0 +1,59 @@
+    <div id="settings" class="col-sm-2">
+        <ul id="menu_colorpick" class="nav">
+            <li>
+                <h4 id="general_title">Couleurs</h4>
+                <ul id="general_menu" class="nav">
+                    <li>
+                        <button colorpicker colorpicker-fixed-position="true" ng-model="setColor.background.colour" type="button" class="btn_left btn btn-primary btn-xs">background</button> 
+                        <div class="right_inputs">
+                            <input class="colorpicker_input" ng-model="setColor.background.colour" type="text" placeholder="#">
+                            <button ng-model="setColor.background.colour" type="submit" class="btn btn-primary btn-xs ok_btn" ng-click="setGeneralColor()">OK</button> 
+                        </div>
+                    </li> 
+                    <li>
+                        <button colorpicker colorpicker-fixed-position="true" ng-model="setColor.text.colour" type="button" class="btn btn-primary btn-xs btn_left">texte header &amp; footer</button> 
+                        <div class="right_inputs">
+                            <input class="colorpicker_input" ng-model="setColor.text.colour" type="text" placeholder="#">
+                            <button ng-model="setColor.text.colour" type="submit" class="btn btn-primary btn-xs ok_btn" ng-click="setGeneralColor()">OK</button> 
+                        </div>
+                    </li>  
+                    <li>
+                        <button colorpicker colorpicker-fixed-position="true" ng-model="setColor.border.colour" type="button" ng-click="setGeneralColor()" class="btn_left btn btn-primary btn-xs">bordure</button> 
+                        <div class="right_inputs">
+                            <input class="colorpicker_input" ng-model="setColor.border.colour" type="text" placeholder="#">
+                            <button ng-model="setColor.border.colour" type="submit" class="btn btn-primary btn-xs ok_btn" ng-click="setGeneralColor()">OK</button> 
+                        </div>
+                    </li>             
+                </ul>
+            </li>
+
+            <li>
+                <h4 id="sections_title">Title</h4>
+                <ul class="nav">
+                    <li class="simpleCountry" ng-repeat="simpleCountry in simpleCountries">
+                        <b>{{simpleCountry.big[0]}} </b><input type="text" ng-model="title[simpleCountry.small]">
+                    </li>
+                </ul>
+            </li>
+           <li>
+                <h4 id="sections_title">Trackings</h4>
+                <ul class="nav" id="collapse_trackings">
+                    <li ng-repeat="collapse in collapses">
+                        <button type="button" class="btn btn-primary btn-xs" data-toggle="collapse" data-target="#tracking{{collapse.id}}">{{collapse.country}}</button>
+                
+                    <div id="tracking{{collapse.id}}" class="collapse"> 
+                        <div class="form-group">
+                            <input type="text" class="trackings form-control" ng-model="track_begin[collapse.country]" placeholder="début tracking">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="trackings form-control" ng-model="track_end[collapse.country]" placeholder="fin tracking">
+                        </div>
+                    </div>
+                    </li> 
+                </ul> 
+                   
+            </li> 
+            
+
+        </ul>
+    </div>

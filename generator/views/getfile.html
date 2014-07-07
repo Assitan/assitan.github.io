@@ -1,0 +1,7 @@
+<div id="getFile" ng-controller="MainCtrl">
+    <label for="fileinput">Choisir un fichier HTML</label>
+    <input model="fileinput" class="btn btn-primary btn-xs" ng-model="file" type="file" id="fileinput" multiple>
+    <!-- <button class="btn btn-primary btn-xs" ng-click="update(file)">get</button> -->
+    <textarea id="targetFile" class="generate_zone" ng-model="file" ng-class="{'text-success': loadingCode.copied, 'text-warning': !loadingCode.copied,'text-primary': loadingCode.pasted}" ng-copy="events.onCopy($event)" ng-paste="events.onPaste($event)"></textarea>
+    <!-- <textarea id="copy-zone" class="generate_zone"></textarea> -->
+</div>
