@@ -9,7 +9,6 @@ app
         i = 0,
         j = 0;
 
-        //console.log(MainCountriesFactory);
 
     for (; i < mainCountries.length; i++) {
         state_kit(mainCountries[i]);
