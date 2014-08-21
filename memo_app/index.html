@@ -18,11 +18,11 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="content" ng-controller="MainCtrl" id="top" ng-cloack>
+    <section class="content" ng-controller="MainCtrl" id="top">
       <div class="col-sm-12">
-          <div class="header">
-            <h3 class="text-muted">Mémos</h3>
-          </div>
+          <header class="header">
+            <h1 class="text-muted">Mémos</h1>
+          </header>
         
           <memo-content ui-view></memo-content>
 
@@ -32,12 +32,12 @@
               </button>
           </div>
            
-          <div class="footer">
+          <footer class="footer">
             <p>{{year | date :'yyyy'}} - <a href="http://www.assitan-k.fr" target="_blank">Assitan</a></p>
-          </div>
+          </footer>
 
       </div>
-    </div>
+    </section>
 
 
     <!--[if lt IE 9]>
