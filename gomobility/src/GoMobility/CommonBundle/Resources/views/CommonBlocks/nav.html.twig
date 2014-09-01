@@ -1,0 +1,34 @@
+          <div class="row">  
+            <nav class="main_nav navbar navbar-default" role="navigation">
+              <div class="container-fluid col-md-10 col-md-offset-1">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <div class="navbar-header">
+                    <div class="logo clearfix">
+                      <h1 class="pull-left">
+                        <a href="{{ url('public.homepage.index') }}">
+                          <img src="{{ asset('bundles/common/assets/img/logo.png')}}" alt="Go Mobility" title="logo" width="270">
+                        </a>
+                      </h1>
+                    </div>            
+                    <p class="slogan">L'Ardèche éco-responsable</p>
+                  </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="main_menu">
+                  <ul class="nav navbar-nav navbar-right main_menu_right">
+                    <li class="{% if app.request.attributes.get('_route') == 'public.project.index' %}active{% endif %}"><a href="{{ url('public.project.index') }}">Le projet</a></li>
+                    <li class="{% if app.request.attributes.get('_route') == 'public.experiences.list' or app.request.attributes.get('_route') == 'public.experience.show' %}active{% endif %}"><a href="{{ url('public.experiences.list') }}">Vos expériences</a></li>
+                    <li class="{% if app.request.attributes.get('_route') == 'public.participate.post' %}active{% endif %}"><a href="{{ url('public.participate.post') }}">Je participe</a></li>          
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <nav class="localisation_nav">            
+              {{ wo_render_breadcrumbs() }}
+            </nav>    

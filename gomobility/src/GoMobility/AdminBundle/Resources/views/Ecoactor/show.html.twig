@@ -1,0 +1,95 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block flashbag %}
+{% for notice in app.session.flashbag.get('notice') %}
+<p class="flashbag">{{ notice }}</p>
+{% endfor %}
+{% endblock %}
+
+{% block title %}{{ parent() }} - Ecoacteur {{ entity.id }}{% endblock %}
+
+{% block body %}
+
+<div class="modal fade" id="confirm_delete_ecoactor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   {% include 'AdminBundle:CommonBlocks:popup_confirmation.html.twig' %}
+</div>
+
+<ul class="record_actions nav nav-pills">
+    <li>
+        <a href="{{ path('admin.ecoactors.index') }}" class="btn btn-default">
+            Retour
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('admin.ecoactors.edit', { 'id': entity.id }) }}" class="btn btn-default">
+            Editer
+        </a>
+    </li>
+    <li>
+        <a href="#" class="btn btn-danger a-btn-danger" data-toggle="modal" data-target="#confirm_delete_ecoactor">Supprimer</a>
+    </li>
+</ul>
+<hr>
+
+<h3>Ecoacteur {{ entity.nom }}</h3>
+
+<div class="table-responsive">
+    <table class="record_properties table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom|capitalize }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Départ</th>
+                <td>{{ entity.start }}</td>
+            </tr>
+            <tr>
+                <th>Arrivée</th>
+                <td>{{ entity.arrival }}</td>
+            </tr>
+            <tr>
+                <th>Latitude de départ</th>
+                <td>{{ entity.startlatitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude de départ</th>
+                <td>{{ entity.startlongitude }}</td>
+            </tr>
+            <tr>
+                <th>Latitude d'arrivée'</th>
+                <td>{{ entity.arrivallatitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude d'arrivée</th>
+                <td>{{ entity.arrivallongitude }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Jeu</th>
+                <td>{{ entity.game }}</td>
+            </tr>
+            <tr>
+                <th>Ges</th>
+                <td>{{ entity.ges }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

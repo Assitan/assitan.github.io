@@ -1,0 +1,23 @@
+public_homepage:
+    resource: '@PublicBundle/Controller/HomePageController.php'
+    type: annotation
+
+public_participate:
+    resource: '@PublicBundle/Controller/ParticipateController.php'
+    type: annotation
+
+public_project:
+    resource: '@PublicBundle/Controller/ProjectPageController.php'
+    type: annotation
+
+public_experiences:
+    resource: '@PublicBundle/Controller/ExperiencesController.php'
+    type: annotation
+
+public_contact:
+    resource: '@PublicBundle/Controller/ContactController.php'
+    type: annotation
+
+public_page:
+    resource: '@PublicBundle/Controller/InfosPagesController.php'
+    type: annotation

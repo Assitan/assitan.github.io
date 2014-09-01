@@ -1,0 +1,112 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Messages{% endblock %}
+
+{% block body %}
+
+<section>
+
+<h3>Messages</h3>
+
+<ul class="nav">
+    <li>
+        <a href="{{ path('admin.contact.new') }}">
+            Envoyer un nouveau message
+        </a>
+    </li>
+</ul>
+
+<div class="container_navigation">
+    {% if pagination %}
+        <div class="nav_all navigation">{{ knp_pagination_render(pagination) }}</div>
+    {% elseif pagination_publish %}
+        <div class="nav_publish navigation">{{ knp_pagination_render(pagination_received) }}</div>
+    {% elseif pagination_unpublish %}
+        <div class="nav_unpublish navigation">{{ knp_pagination_render(pagination_sent) }}</div>
+    {% endif %}
+</div> 
+
+<div id="message_list" class="table-responsive">
+    
+    <ul id="filter_message" class="nav nav-tabs" role="tablist">
+        <li><a id="all_link_message" href="#">Tout</a></li>
+        <li class="active"><a id="received_link_message" href="#">Reçus</a></li>
+        <li><a id="sent_link_message" href="#">Envoyés</a></li>
+    </ul>
+
+    <table class="records_list table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Actions</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Sujet</th>
+                <th>Date</th>
+                <th>Message</th>            
+                <th>Type</th>            
+        </thead>
+        <tbody id="all_message">
+            {% for entity in pagination %}
+            <tr>
+                <td>
+                    <a class="info_tip" data-toggle="tooltip" data-placement="left" title="voir" href="{{ path('admin.contact.show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                </td>
+                <td>{{ entity.nom|capitalize }}</td>
+                <td><a href="{{ entity.email }}">{{ entity.email }}</a></td>
+                <td>{{ entity.sujet }}</td>
+                <td>{{ entity.date|date('d/m/Y à h:m:s') }}</td>
+                <td>{{ entity.message }}</td>                
+                <td><button class="btn btn-xs {% if entity.type == 'envoyé' %}btn-info{% elseif entity.type == 'reçu' %}btn-warning{% endif %}">{{ entity.type }}</button></td>               
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tbody id="received_message">
+            {% for entity in pagination_received %}
+            <tr>
+                <td>
+                    <a class="info_tip" data-toggle="tooltip" data-placement="left" title="voir" href="{{ path('admin.contact.show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                </td>
+                <td>{{ entity.nom|capitalize }}</td>
+                <td><a href="{{ entity.email }}">{{ entity.email }}</a></td>
+                <td>{{ entity.sujet }}</td>
+                <td>{{ entity.date|date('d/m/Y à h:m:s') }}</td>
+                <td>{{ entity.message }}</td>                
+                <td><button class="btn btn-xs btn-info">{{ entity.type }}</button></td>               
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tbody id="sent_message">
+            {% for entity in pagination_sent %}
+            <tr>
+                <td>
+                    <a class="info_tip" data-toggle="tooltip" data-placement="left" title="voir" href="{{ path('admin.contact.show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                </td>
+                <td>{{ entity.nom|capitalize }}</td>
+                <td><a href="{{ entity.email }}">{{ entity.email }}</a></td>
+                <td>{{ entity.sujet }}</td>
+                <td>{{ entity.date|date('d/m/Y à h:m:s') }}</td>
+                <td>{{ entity.message }}</td>                
+                <td><button class="btn btn-xs btn-warning">{{ entity.type }}</button></td>               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="container_navigation">
+    {% if pagination %}
+        <div class="nav_all navigation">{{ knp_pagination_render(pagination) }}</div>
+    {% elseif pagination_publish %}
+        <div class="nav_publish navigation">{{ knp_pagination_render(pagination_received) }}</div>
+    {% elseif pagination_unpublish %}
+        <div class="nav_unpublish navigation">{{ knp_pagination_render(pagination_sent) }}</div>
+    {% endif %}
+</div> 
+
+</section>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/common/assets/js/adminTab/tabList.class.js')}}"></script>
+    <script src="{{ asset('bundles/common/assets/js/adminTab/MessagesList.js')}}"></script>
+{% endblock %}

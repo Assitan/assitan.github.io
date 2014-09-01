@@ -1,0 +1,44 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Accueil{% endblock %}
+
+{% block body %}
+<div id="main_content" class="clearfix">
+	<section id="last_xp" class="col-md-7 col-md-offset-1">
+		<div class="clearfix style_main-section">
+			<h3 id="last_xp_title">Dernière expérience</h3>
+			<div>
+      <div id="hidden_bloc_container">
+        {% for experience in last10_experiences %}
+        
+        <div class="hidden_home">
+          <ul>
+            <li class="id_home">{{experience.id}}</li>
+            <li class="type_home">{{experience.type}}</li>
+            <li class="marker_home">{{ asset('bundles/common/assets/img/markerGo.png')}}</li>
+            <li class="link_home">{{ url('public.experience.show', {'id':experience.id})}}</li>
+            <li class="description_home">{{ experience.description }}</li>
+            <li class="lat_home">{{ experience.startLatitude }}</li>
+            <li class="long_home">{{ experience.startLongitude }}</li>
+            <li class="tenxp_home">{{experience|length}}</li>
+          </ul>
+        </div>
+      {% endfor %}
+      </div>
+
+				{% for experience in last_experience %}
+
+				<p>{{ experience.description | slice(0, 250)}}...</p>
+				<div id="excerpt_info">
+					<small class="pull-left text-muted">Posté le <strong>{{ experience.date|date('d/m/Y')}}</strong>  par <a href="{{ url('public.experiences.ranking')}}#{{experience.nom}}{{experience.id}}" id="name_xp" class="text-info">{{experience.nom|capitalize}}</a></small>
+					<a class="pull-right read_next btn btn-info" href="{{ url('public.experience.show', {'id':experience.id})}}">Lire la suite</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div id="main_maps" class="img-responsive google_maps"></div>
+	</section>
+{% endblock %}
+{% block javascripts %}
+  <script src="{{ asset('bundles/common/assets/js/googleMaps/map_home.js')}}"></script>
+{% endblock %}

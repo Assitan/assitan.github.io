@@ -1,0 +1,33 @@
+{% set locale = app.request.locale %}
+{% set route = app.request.get('_route') %}
+{% set routeParams = app.request.get('_route_params') %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ locale }}"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}"/>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="{{ asset('bundles/common/libs/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('bundles/common/libs/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('bundles/common/assets/stylesheets/default.css')}}">
+        <link rel="stylesheet" href="{{ asset('bundles/common/assets/stylesheets/common.css')}}">     
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script src="{{ asset('bundles/common/libs/js/jquery-1.11.1.min.js')}}"></script>
+        <script src="{{ asset('bundles/common/libs/js/modernizr.js')}}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    </head>
+    <body>
+    {% block mainbody %}{% endblock %}
+    <script src="{{ asset('bundles/common/libs/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('bundles/common/assets/js/app.js')}}"></script>
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>

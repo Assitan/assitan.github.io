@@ -1,0 +1,23 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Ecoacteurs{% endblock %}
+
+{% block body %}
+<div id="ecoactors_content" class="clearfix">
+	<section class="col-md-7 col-md-offset-1">
+		<div class="clearfix style_main-section">
+			<h3>Ecoacteurs</h3>
+			<div>
+				<ul id="ecoactors_list" class="nav">
+				  {% for ecoactor in pagination %}
+				    <li>
+				    <a id="{{ecoactor.nom}}{{ecoactor.id}}" href="{{ url('public.experience.show', {'id':ecoactor.id})}}">{{ecoactor.nom}}</a>
+				    </li>
+				  {% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+

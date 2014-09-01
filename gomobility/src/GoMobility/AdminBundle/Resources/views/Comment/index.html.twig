@@ -1,0 +1,117 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Commentaires{% endblock %}
+
+{% block body %}
+<h3>Liste des commentaires</h3>
+
+<div class="container_navigation">
+{% if pagination %}
+    <div class="nav_all navigation">{{ knp_pagination_render(pagination) }}</div>
+{% elseif pagination_publish %}
+    <div class="nav_publish navigation">{{ knp_pagination_render(pagination_publish) }}</div>
+{% elseif pagination_unpublish %}
+    <div class="nav_unpublish navigation">{{ knp_pagination_render(pagination_unpublish) }}</div>
+{% endif %}
+</div>
+
+<div class="table-responsive">
+    <ul id="filter_comment" class="nav nav-tabs" role="tablist">
+        <li class="active"><a id="allpublish_link_comment" href="#">Tout</a></li>
+        <li><a id="publish_link_comment" href="#">Publié</a></li>
+        <li><a id="unpublish_link_comment" href="#">Non publié</a></li>
+    </ul>
+
+    <table class="records_list table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Actions</th>
+                <th>Status</th> 
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Date</th>                       
+            </tr>
+        </thead>
+        <tbody id="allpublish_comment">
+            {% for entity in pagination %}
+            <tr>
+                <td>
+                    <ul class="nav">
+                        <li>
+                            <a class="info_tip" href="{{ path('admin.comments.show', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="voir"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        </li>
+                        <li>
+                            <a class="info_tip" href="{{ path('admin.comments.edit', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="éditer"><span class="glyphicon glyphicon-pencil"></span></a>
+                        </li>
+                    </ul>
+                </td>
+                <td><button class="btn btn-xs {% if entity.status == 'publié' %}btn-success{% elseif entity.status == 'non publié' %}btn-danger{% endif %}">{{ entity.status }}</button></span>
+                </td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.message }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y à h:m:s') }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tbody id="publish_comment">
+            {% for entity in pagination_publish %}
+            <tr>
+                <td>
+                    <ul class="nav">
+                        <li>
+                            <a class="info_tip" href="{{ path('admin.comments.show', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="voir"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        </li>
+                        <li>
+                            <a class="info_tip" href="{{ path('admin.comments.edit', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="éditer"><span class="glyphicon glyphicon-pencil"></span></a>
+                        </li>
+                    </ul>
+                </td>
+                <td><button class="btn btn-xs {% if entity.status == 'publié' %}btn-success{% elseif entity.status == 'non publié' %}btn-danger{% endif %}">{{ entity.status }}</button></span>
+                </td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.message }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y à h:m:s') }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tbody id="unpublish_comment">
+            {% for entity in pagination_unpublish %}
+            <tr>
+                <td>
+                    <ul class="nav">
+                        <li>
+                            <a class="info_tip" href="{{ path('admin.comments.show', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="voir"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        </li>
+                        <li>
+                            <a class="info_tip" href="{{ path('admin.comments.edit', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="éditer"><span class="glyphicon glyphicon-pencil"></span></a>
+                        </li>
+                    </ul>
+                </td>
+                <td><button class="btn btn-xs {% if entity.status == 'publié' %}btn-success{% elseif entity.status == 'non publié' %}btn-danger{% endif %}">{{ entity.status }}</button></span>
+                </td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.message }}</td>
+                <td>{% if entity.date %}{{ entity.date|date('d/m/Y à h:m:s') }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if pagination %}
+    <div class="nav_all navigation">{{ knp_pagination_render(pagination) }}</div>
+    {% elseif pagination_publish %}
+        <div class="nav_publish navigation">{{ knp_pagination_render(pagination_publish) }}</div>
+    {% elseif pagination_unpublish %}
+        <div class="nav_unpublish navigation">{{ knp_pagination_render(pagination_unpublish) }}</div>
+    {% endif %}
+</div>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/common/assets/js/adminTab/tabList.class.js')}}"></script>
+    <script src="{{ asset('bundles/common/assets/js/adminTab/commentsList.js')}}"></script>
+{% endblock %}

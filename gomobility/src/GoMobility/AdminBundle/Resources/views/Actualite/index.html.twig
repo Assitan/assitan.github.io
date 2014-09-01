@@ -1,0 +1,65 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Messages{% endblock %}
+
+{% block body -%}
+
+<section>
+
+    <h3>Liste des actualités</h3>
+
+    <ul class="nav">
+        <li>
+            <a href="{{ path('admin.actualites.new') }}">
+                Ecrire une nouvelle actualité
+            </a>
+        </li>
+    </ul>
+
+    <div class="container_navigation">
+        {% if pagination %}
+        <div class="nav_all navigation">{{ knp_pagination_render(pagination) }}</div>
+        {% endif %}
+    </div> 
+
+    <div class="table-responsive col-md-7">
+        <table class="records_list table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>Titre</th>
+                    <th>Texte</th>
+                    <th>Date</th>
+
+                </tr>
+            </thead>
+            <tbody allpublish_comment>
+                {% for entity in pagination %}
+                <tr>
+                    <td>
+                        <ul class="nav">
+                            <li> 
+                                <a class="info_tip" data-toggle="tooltip" data-placement="left" title="voir" href="{{ path('admin.actualites.show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </li>
+                            <li> 
+                             <a class="info_tip" href="{{ path('admin.actualites.edit', { 'id': entity.id }) }}" data-toggle="tooltip" data-placement="left" title="éditer"><span class="glyphicon glyphicon-pencil"></span></a>
+                         </li>
+                     </ul>
+                 </td>
+                 <td>{{ entity.titre|capitalize }}</td>
+                 <td>{{ entity.texte }}</td>
+                 <td>{{ entity.date|date('d/m/Y à h:m:s') }}</td>              
+
+             </tr>
+
+
+             {% endfor %}
+         </tbody>
+     </table>
+ </div>
+
+ {% endblock %}
+ {% block javascripts %}
+ <script src="{{ asset('bundles/common/assets/js/adminTab/tabList.class.js')}}"></script>
+ <script src="{{ asset('bundles/common/assets/js/adminTab/MessagesList.js')}}"></script>
+ {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+{% block title %}Tableau de bord{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/common/assets/stylesheets/admin.css')}}">
+{% endblock %}
+{% block mainbody %}
+    {% block flashbag %}{% endblock %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url('public.homepage.index') }}">Go Mobility</a>
+            </div>
+            <div class="connected">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <span>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} </span>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% include 'AdminBundle:CommonBlocks:sidebar.html.twig' %}
+            {% include 'AdminBundle:CommonBlocks:header.html.twig' %}
+            {% include 'AdminBundle:CommonBlocks:nav.html.twig' %}
+            {% block body %}{% endblock %}
+            {% include 'AdminBundle:CommonBlocks:footer.html.twig' %}
+        {% block javascripts %}{% endblock %}      
+{% endblock %}

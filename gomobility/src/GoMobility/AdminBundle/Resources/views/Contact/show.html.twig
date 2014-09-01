@@ -1,0 +1,39 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block flashbag %}
+{% for notice in app.session.flashbag.get('notice') %}
+<p class="flashbag">{{ notice }}</p>
+{% endfor %}
+{% endblock %}
+
+{% block title %}{{ parent() }} - Message{% endblock %}
+
+{% block body %}
+<div class="modal fade" id="confirm_show_delete_message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   {% include 'AdminBundle:CommonBlocks:popup_confirmation.html.twig' %}
+</div>
+
+<ul class="record_actions nav nav-pills">
+    <li>
+        <a href="{{ path('admin.contact.index') }}" class="btn btn-default">
+            Retour
+        </a>
+    </li>
+    <li>
+        <a class="btn btn-danger a-btn-danger" href="#" data-toggle="modal" data-target="#confirm_show_delete_message">Supprimer</a>
+    </li>
+</ul>
+<hr>
+
+<section class="messages_bloc">
+    <strong class="subjet">{{ entity.sujet }}</strong>
+    <hr>
+    <strong>{{ entity.nom|capitalize }}</strong>, <em>{{ entity.email }}</em>, 
+    <b class="info_tip text-muted" data-toggle="tooltip" data-placement="bottom" title="{{ entity.date|date('d/m/Y à h:m:s') }}">{{ entity.date|date('h:m') }}</b>
+
+    <p class="message_content">
+        {{ entity.message }}
+    </p>
+</section>
+
+{% endblock %}

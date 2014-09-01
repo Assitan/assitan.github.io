@@ -1,0 +1,88 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Expérience{% endblock %}
+
+{% block body %}
+{% for notice in app.session.flashbag.get('notice') %}
+<p class="flashbag">{{ notice }}</p>
+{% endfor %} 
+<div class="clearfix">
+	<section class="col-md-7 col-md-offset-1">
+		<div class="clearfix style_main-section">
+			<div>
+				<article>			
+					<p>{{ experiences.description }}</p>
+					<p>le <em>{{ experiences.date | date('d/m/y') }}</em>, par <strong>{{experiences.nom|capitalize}}</strong></p>
+					
+					<hr>
+					
+					<ul class="nav">
+						<li><strong>Adresse de départ</strong> : <span class="start">{{ experiences.start }}</span></li>
+						<li><strong>Addresse d'arrivée</strong> : <span class="arrival">{{ experiences.arrival }}</span></li>
+						<li><strong>Mode de transport</strong> : {{ experiences.type }}</li>
+					</ul>
+
+					<hr>
+					<div id="experience_maps" class="img-responsive google_maps"></div>	
+
+					<hr>
+					<a href="{{url('public.experiences.list')}}"><span class="glyphicon glyphicon-chevron-right"></span> Liste des expériences</a>					
+				</article>
+			</div>			
+		</div>
+
+		<div class="comments_bloc style_main-section">
+			<h4>Commentaires</h4>
+
+			{% if comms %}
+				{% for comm in comms %}
+				<div class="comment">
+					<p><em>{{comm.nom|capitalize }}</em>, le <strong>{{comm.date|date('d/m/Y') }}</strong></p>		
+					<p>{{comm.message}}</p>	
+				</div>		
+				{% endfor %}
+			{% else %}
+				<p class="empty_comment">Il n'y a pas encore de commentaire. Laissez le vôtre !</p>
+			{% endif %}
+		</div>
+		
+		<div>					
+			   
+			<form role="form" method="post" novalidate {{ form_enctype(form)}} class="form_comments style_main-section">
+				<legend>Laisser un commentaire</legend>
+				<div class="form-group">
+				    {{ form_label(form.nom, 'Nom')}}
+                	{{ form_widget(form.nom, {'attr':{'class':'form-control'}})}}
+                	<small class="errors text-danger">{{ form_errors(form.nom)}}</small> 
+				</div>
+				<div class="form-group">
+				    {{ form_label(form.email, 'Email')}}
+                	{{ form_widget(form.email, {'attr':{'placeholder':'jean@mail.com','class':'form-control'}})}}
+                	<small class="errors text-danger">{{ form_errors(form.email)}}</small> 
+				</div>
+				<div class="form-group">
+				    {{ form_label(form.message, 'Commentaire')}}
+                	{{ form_widget(form.message, {'attr':{'class':'form-control','rows':'5'}})}}
+                	<small class="errors text-danger">{{ form_errors(form.message)}}</small>
+				</div>
+				<div class="form-group hidden_type">
+                	{{ form_widget(form.status)}}
+                	{{ form_widget(form.date)}}
+				</div>
+				<div class="form-group">
+                	{{ form_widget(form.captcha)}}
+				</div>
+				<div class="form-group">
+					{{ form_widget(form.valider, {'attr':{'class':'btn btn-info pull-right'}})}}	
+					{{ form_widget(form._token)}}
+				</div>
+			</form>
+		</div>
+	</section>
+    
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('bundles/common/assets/js/googleMaps/map_experience.js')}}"></script>
+{% endblock %}
+
+

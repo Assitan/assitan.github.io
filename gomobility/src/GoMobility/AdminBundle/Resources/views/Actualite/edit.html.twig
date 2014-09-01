@@ -1,0 +1,36 @@
+{% extends "AdminBundle::layout.html.twig" %}
+{% block flashbag %}
+{% for notice in app.session.flashbag.get('notice') %}
+<p class="flashbag">{{ notice }}</p>
+{% endfor %}
+{% endblock %}
+{% block title %}{{ parent() }} - Modification d'une actualité{% endblock %}
+
+{% block body %}
+
+{% for notice in app.session.flashbag.get('notice') %}
+	<p class="flashbag">{{ notice }}</p>
+{% endfor %} 
+<div class="modal fade" id="confirm_edit_delete_actu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   {% include 'AdminBundle:CommonBlocks:popup_confirmation.html.twig' %}
+</div>
+
+<h3>Modifier une actualité</h3>
+<ul class="record_actions nav nav-pills">
+	<li>
+		<a href="{{ path('admin.actualites.index') }}">
+			Retour
+		</a>
+	</li>
+	<li>
+		<button class="btn btn-danger" data-toggle="modal" data-target="#confirm_edit_delete_actu">Supprimer</button>
+	</li>
+</ul>
+<hr>
+<div id="form_edit_actu">
+	{{ form(edit_form) }}
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/common/assets/js/stylingForm.js')}}"></script>
+{% endblock %}

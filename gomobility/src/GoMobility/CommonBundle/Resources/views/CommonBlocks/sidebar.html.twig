@@ -1,0 +1,68 @@
+	<section class="col-md-3 main_sidebar">
+		<div class="infos">
+			<h3 class="sidebar_title"><span class="glyphicon glyphicon-info-sign"></span> Informations</h3>
+			<ul class="nav">
+				<li class="infos_bloc">
+					<a href="{{ url('public.experiences.ranking') }}">
+						<div class="infos_text pull-left">
+							<div class="icons pull-left"><i class="fa fa-group fa-lg"></i></div> 
+							<p class="pull-right"><span class="number_ecoactor">{{total_experiences|length}}</span> engagés</p>
+						</div>
+						<div class="sidebar_chevron pull-right">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</div>
+					</a>
+				</li>
+				<li class="infos_bloc">
+					<a href="{{ url('public.infospages.meilleur') }}">
+						<div class="infos_text pull-left">
+							<div class="icons pull-left"><i class="fa fa-trophy fa-lg"></i></div> 
+							<p class="pull-right">Meilleure éco-action</p>
+						</div>
+						<div class="sidebar_chevron pull-right">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</div>
+					</a>
+				</li>
+				<li class="infos_bloc">
+					<a href="{{ url('public.infospages.appli-mobile') }}">
+						<div class="infos_text pull-left">
+							<div class="icons pull-left"><i class="fa fa-mobile fa-2x"></i></div> 
+							<p class="pull-right">Application mobile</p>
+						</div>
+						<div class="sidebar_chevron pull-right">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="actus">
+			<h3 class="sidebar_title"><span class="glyphicon glyphicon-calendar"></span> Actualités</h3>
+			<ul class="nav">
+				{%for actu in actus %}
+                   <li class="actus_bloc">
+					<a href="{{ url('public.infospages.actualite', {'id':actu.id})}}">
+						<div class="actus_text pull-left">
+							<h4>{{actu.titre|capitalize}}</h4>
+							<span>{{actu.date|date('d/m/Y')}}</span>
+						</div>
+						<div class="sidebar_chevron pull-right">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</div>
+					</a>
+				</li>
+                {% endfor %}
+				
+			</ul>
+		</div>
+		<div class="find_us">
+			<h3 class="sidebar_title"><span class="glyphicon glyphicon-share-alt"></span> Retrouvez-nous</h3>
+			<ul class="nav">
+				<li class="pull-left"><a href=""><img src="{{ asset('bundles/common/assets/img/reseaux-sociaux/fb.png')}}" alt="facebook" width="30" height="30"></a></li>
+				<li class="pull-left"><a href=""><img src="{{ asset('bundles/common/assets/img/reseaux-sociaux/twitter.png')}}" alt="twitter" width="30" height="30"></a></li>
+				<li class="pull-left"><a href=""><img src="{{ asset('bundles/common/assets/img/reseaux-sociaux/dribble.png')}}" alt="dribble" width="30" height="30"></a></li>
+				<li class="pull-left"><a href=""><img src="{{ asset('bundles/common/assets/img/reseaux-sociaux/google.png')}}" alt="google plus" width="30" height="30"></a></li>
+			</ul>
+		</div>
+	</section>

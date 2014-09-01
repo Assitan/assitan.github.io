@@ -1,0 +1,33 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Accueil{% endblock %}
+
+{% block body %}
+<section>
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<tr>
+					<td><span class="glyphicon glyphicon-map-marker"></span></td>
+					<td><a href="{{ url('admin.ecoactors.index') }}">Eco-acteurs</a></td>
+					<td><span class="label label-info">{{ entities|length }}</span></td>
+				</tr>
+				<tr>
+					<td><span class="glyphicon glyphicon-envelope"></span></td>
+					<td><a href="{{ url('admin.contact.index') }}">Messages</a></td>
+					<td><span class="label label-default">{{ messages|length }}</span></td>
+				</tr>
+				<tr>
+					<td><span class="glyphicon glyphicon-stats"></span></td>
+					<td><a href="{{ url('admin.ecoactors.ranking') }}">Meilleurs éco-acteurs</a></td>
+					<td>
+					{% for bestEcoactor in bestEcoactors %}    
+					    <a href="{{bestEcoactor.email}}">{{bestEcoactor.nom}}</a>
+					{% endfor %}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+{% endblock %}

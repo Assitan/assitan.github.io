@@ -1,0 +1,57 @@
+@import "common.scss";
+
+.title_login{
+	a{
+		color: #000;
+		&:hover{
+			text-decoration: none
+		}
+	}
+}
+
+.separator{
+   display: none;
+}
+
+.coordinates, .record_actions{
+	clear: both;
+}
+
+.main{
+	padding-bottom: 40px;
+}
+
+#edit_form{
+	padding: 0;
+}
+
+#gomobility_publicbundle_comments_valider{
+	float: left;
+}
+
+.nav-sidebar{
+	li.active{
+		a{
+			color: #fff;
+			background: #428bca;
+		}
+	}
+}
+
+//Messagerie
+.messages_bloc{
+	.subjet{
+		font-size: 18px;
+	}
+
+	.message_content{
+		margin-top: 20px;
+		background: #F5F5F5;
+		border: 1px solid #eee;
+		padding: 20px;
+	}
+}
+
+
+
+

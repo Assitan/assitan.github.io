@@ -1,0 +1,39 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Expériences{% endblock %}
+
+{% block body %}
+<div id="experiences_content" class="clearfix">
+	<section class="col-md-7 col-md-offset-1">
+		<div class="clearfix style_main-section">
+			<h3>Expériences</h3>
+			<div>
+				{% if pagination %}
+				<div class="navigation">	
+					{{ knp_pagination_render(pagination) }}
+				</div>	
+				{% endif %}
+				
+				<ul id="experiences_list" class="nav">
+					{% for experience in pagination %}
+					<li>
+						<h4><a  href="{{ url('public.experience.show', {'id':experience.id})}}">Expérience n°{{ experience.id}}</a></h4>
+						
+						<p>
+							<strong>GES: </strong>{{ experience.ges}}<br>
+							{{ experience.description | slice(0, 250)}}...<br>
+							<a class="pull-right read_next btn btn-info" href="{{ url('public.experience.show', {'id':experience.id})}}">Lire la suite</a>
+						</p>
+						
+					</li>
+					{% endfor %}
+				</ul>
+				<div class="navigation">
+					{{ knp_pagination_render(pagination) }} {#{ pagination.getTotalItemCount }#} 
+				</div>
+			</div>
+		</div>
+	</section>
+	{% endblock %}
+
+

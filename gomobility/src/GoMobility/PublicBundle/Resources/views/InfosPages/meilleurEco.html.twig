@@ -1,0 +1,39 @@
+{% extends "CommonBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Contact{% endblock %}
+
+{% block body %}
+<div id="page_meilleurEA" class="clearfix">
+
+  <section class="col-md-7 col-md-offset-1">
+    <div id="best-ecoactor" class="clearfix style_main-section">
+     <h3>Meilleur éco-acteur</h3>
+
+     <div class="contain-middle">
+
+      <p>
+       Fusce commodo risus sit amet leo blandit, nec tempus quam fringilla. Suspendisse quis pulvinar nisi. Maecenas non lobortis ligula, quis feugiat orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut enim magna. Cras vitae arcu quis erat dictum vulputate id et elit. Vestibulum scelerisque, felis vitae rutrum aliquet, lectus mi tristique nisl, non luctus odio mi sit amet urna. Aenean a risus erat. Morbi id nunc tellus. Phasellus leo orci, molestie cursus iaculis vel, faucibus at nisl. Suspendisse blandit varius ligula eget porttitor. Phasellus sodales sodales sollicitudin. Integer commodo mollis lectus in mattis. 
+     </p>
+   </div>
+
+   <div class="block_left">
+    <p>  
+      <span>Le meilleur éco-acteur est :</span>  {{ bestEA[0]['nom'] }}<br>
+      <span>Type de parcours :</span>  {{ bestEA[0]['type'] }}<br>
+      <span>Départ :</span>  {{ bestEA[0]['start'] }}<br>
+      <span>Arrivée :</span>  {{ bestEA[0]['arrival'] }}<br>
+      <span>gas a effet de serre :</span>  {{ bestEA[0]['ges'] }}<br><br>
+
+      <span>Description :</span>  {{ bestEA[0]['description'] }}<br><br>
+    </p>
+
+  </div>	
+
+  <div class="block_right">
+    <img src="{{ asset('bundles/common/assets/img/meilleur_trophy2.png')}}" alt="Go Mobility-trophy" >
+  </div>	
+
+</div>
+</section>
+
+{% endblock %}

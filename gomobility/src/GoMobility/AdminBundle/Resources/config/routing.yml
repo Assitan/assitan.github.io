@@ -1,0 +1,19 @@
+admin_homepage:
+    resource: '@AdminBundle/Controller/HomePageController.php'
+    type: annotation
+
+admin_ecoactors:
+    resource: '@AdminBundle/Controller/EcoactorController.php'
+    type: annotation
+
+admin_comments:
+    resource: '@AdminBundle/Controller/CommentController.php'
+    type: annotation
+
+admin_messages:
+    resource: '@AdminBundle/Controller/ContactController.php'
+    type: annotation
+
+admin_actualite:
+    resource: '@AdminBundle/Controller/ActualiteController.php'
+    type: annotation

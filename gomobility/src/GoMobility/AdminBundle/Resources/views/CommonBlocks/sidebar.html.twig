@@ -1,0 +1,12 @@
+<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li class="{% if app.request.attributes.get('_route') == 'admin.homepage.index' %}active{% endif %}"><a href="{{ url('admin.homepage.index') }}"><span class="glyphicon glyphicon-home"></span> Tableau de bord</a></li>
+		<li class="{% if app.request.attributes.get('_route') == 'admin.ecoactors.index' or app.request.attributes.get('_route') == 'admin.ecoactors.show' or app.request.attributes.get('_route') == 'admin.ecoactors.edit' %}active{% endif %}"><a href="{{ url('admin.ecoactors.index') }}"><span class="glyphicon glyphicon-map-marker"></span> Eco-acteurs</a></li>
+		<li class="{% if app.request.attributes.get('_route') == 'admin.comments.index' or app.request.attributes.get('_route') == 'admin.comments.show' or app.request.attributes.get('_route') == 'admin.comments.edit' %}active{% endif %}"><a href="{{ url('admin.comments.index') }}"><span class="glyphicon glyphicon-comment"></span> Commentaires</a></li>
+		<li class="{% if app.request.attributes.get('_route') == 'admin.contact.index' or app.request.attributes.get('_route') == 'admin.contact.show' or app.request.attributes.get('_route') == 'admin.contact.edit' or app.request.attributes.get('_route') == 'admin.contact.new' %}active{% endif %}"><a href="{{ url('admin.contact.index') }}"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+		<li class="{% if app.request.attributes.get('_route') == 'public.homepage.index' %}active{% endif %}"><a href="{{ url('public.homepage.index') }}"><span class="glyphicon glyphicon-user"></span> Site public</a></li>
+		<li class="{% if app.request.attributes.get('_route') == 'admin.ecoactors.ranking' %}active{% endif %}"><a href="{{ url('admin.ecoactors.ranking') }}"><span class="glyphicon glyphicon-stats"></span> Meilleurs éco-acteurs</a></li>
+		<li class="{% if app.request.attributes.get('_route') == 'admin.actualites.index' or app.request.attributes.get('_route') == 'admin.actualites.show' or app.request.attributes.get('_route') == 'admin.actualites.edit' or app.request.attributes.get('_route') == 'admin.actualites.new' %}active{% endif %}"><a href="{{ url('admin.actualites.index') }}"><span class="glyphicon glyphicon-comment"></span> Actualités</a></li>
+		<li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-out"></span> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
+	</ul>
+</div>
